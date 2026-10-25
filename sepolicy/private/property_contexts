@@ -1,3 +1,4 @@
 persist.kgv.dns.mode    u:object_r:kgv_dns_mode_prop:s0 exact string
 kgv.dns.                u:object_r:kgv_dns_prop:s0
 persist.kgv.dns.servers u:object_r:kgv_dns_mode_prop:s0 exact string
+persist.kgv.dns.adblock u:object_r:kgv_dns_mode_prop:s0 exact bool
