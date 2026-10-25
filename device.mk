@@ -91,6 +91,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     KGVIntelligence
 
+# KGV FusionX: on-device Unbound DNS resolver (external/unbound)
+PRODUCT_PACKAGES += \
+    unbound
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@7.1-impl:32 \

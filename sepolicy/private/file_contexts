@@ -1,0 +1,3 @@
+/system_ext/bin/unbound             u:object_r:kgv_unbound_exec:s0
+/system_ext/bin/kgv_dns_redirect    u:object_r:kgv_dns_exec:s0
+/data/misc/kgv_unbound(/.*)?        u:object_r:kgv_unbound_data_file:s0

@@ -1,0 +1,6 @@
+# KGV FusionX DNS: the mode KGV X Intelligence chooses, and the resolver state.
+system_internal_prop(kgv_dns_mode_prop)
+system_internal_prop(kgv_dns_prop)
+
+set_prop(system_app, kgv_dns_mode_prop)
+get_prop(system_app, kgv_dns_prop)

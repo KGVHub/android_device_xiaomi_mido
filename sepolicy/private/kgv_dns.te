@@ -1,0 +1,27 @@
+# KGV FusionX: kgv_dns_redirect, which points every app's DNS at Unbound with
+# iptables and lifts the redirect when Unbound or recursion stops working.
+type kgv_dns, domain, coredomain;
+type kgv_dns_exec, system_file_type, exec_type, file_type;
+
+init_daemon_domain(kgv_dns)
+net_domain(kgv_dns)
+
+allow kgv_dns shell_exec:file rx_file_perms;
+allow kgv_dns toolbox_exec:file rx_file_perms;
+allow kgv_dns system_file:file { rx_file_perms lock };
+
+# iptables / ip6tables
+allow kgv_dns self:capability { net_admin net_raw chown fowner dac_override };
+allow kgv_dns self:rawip_socket create_socket_perms_no_ioctl;
+allow kgv_dns proc_net:file r_file_perms;
+dontaudit kgv_dns kernel:system module_request;
+
+# Health checks (nc) and Unbound's files.
+allow kgv_dns self:tcp_socket create_stream_socket_perms;
+allow kgv_dns kgv_unbound_data_file:dir rw_dir_perms;
+allow kgv_dns kgv_unbound_data_file:file { create_file_perms setattr };
+allow kgv_dns system_security_cacerts_file:dir r_dir_perms;
+allow kgv_dns system_security_cacerts_file:file r_file_perms;
+
+get_prop(kgv_dns, kgv_dns_mode_prop)
+set_prop(kgv_dns, kgv_dns_prop)

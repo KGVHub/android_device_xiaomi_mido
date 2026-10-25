@@ -1,0 +1,17 @@
+# KGV FusionX: Unbound, the on-device DNS resolver (external/unbound).
+type kgv_unbound, domain, coredomain;
+type kgv_unbound_exec, system_file_type, exec_type, file_type;
+type kgv_unbound_data_file, file_type, data_file_type, core_data_file_type;
+
+init_daemon_domain(kgv_unbound)
+net_domain(kgv_unbound)
+
+# Listen on 127.0.0.1/::1 port 5353 and query DNS servers.
+allow kgv_unbound self:udp_socket create_socket_perms;
+allow kgv_unbound self:tcp_socket create_stream_socket_perms;
+allow kgv_unbound port:{ udp_socket tcp_socket } name_bind;
+allow kgv_unbound node:{ udp_socket tcp_socket } node_bind;
+
+# Cache directory with the self-updating DNSSEC trust anchor.
+allow kgv_unbound kgv_unbound_data_file:dir rw_dir_perms;
+allow kgv_unbound kgv_unbound_data_file:file create_file_perms;
