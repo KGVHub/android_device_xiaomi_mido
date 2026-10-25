@@ -169,3 +169,4 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
 -include vendor/xiaomi/mido/BoardConfigVendor.mk
+TARGET_KERNEL_ADDITIONAL_FLAGS += KBUILD_BUILD_USER=kgvarunkanth KBUILD_BUILD_HOST=KGV-FusionX
