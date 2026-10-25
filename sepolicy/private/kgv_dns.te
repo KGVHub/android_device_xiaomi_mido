@@ -11,7 +11,7 @@ allow kgv_dns toolbox_exec:file rx_file_perms;
 allow kgv_dns system_file:file { rx_file_perms lock };
 
 # iptables / ip6tables
-allow kgv_dns self:capability { net_admin net_raw chown fowner };
+allow kgv_dns self:capability { net_admin net_raw chown fowner kill };
 allow kgv_dns self:rawip_socket create_socket_perms_no_ioctl;
 allow kgv_dns proc_net:file r_file_perms;
 dontaudit kgv_dns kernel:system module_request;
