@@ -480,7 +480,7 @@
     <bool name="config_smart_battery_available">true</bool>
 
     <!-- The name of the package that will hold the assistant role by default. -->
-    <string name="config_defaultAssistant" translatable="false">com.google.android.googlequicksearchbox</string>
+    <string name="config_defaultAssistant" translatable="false">org.kgv.intelligence</string>
     
     <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
          when registering authenticators with BiometricService. Format must be ID:Modality:Strength,

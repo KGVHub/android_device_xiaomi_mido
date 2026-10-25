@@ -132,6 +132,10 @@ ro.surface_flinger.enable_layer_caching=true
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 ro.surface_flinger.max_virtual_display_dimension=4096
+# Window blur for KGV X Intelligence; SystemUI keeps its own blurs off for speed.
+ro.surface_flinger.supports_background_blur=1
+ro.sf.blurs_are_expensive=1
+persist.sysui.disableBlur=1
 
 # System
 persist.sys.binary_xml=false

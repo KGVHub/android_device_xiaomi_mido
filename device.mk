@@ -87,6 +87,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     AntHalService
 
+# KGV X Intelligence
+PRODUCT_PACKAGES += \
+    KGVIntelligence
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@7.1-impl:32 \
